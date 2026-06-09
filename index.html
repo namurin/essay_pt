@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Technology Innovation Drives Economic Grwoth</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="deck" aria-label="Technology innovation presentation">
+      <section class="slide title-slide active" data-slide="1">
+        <div class="center-stack">
+          <p class="kicker">Economics Presentation</p>
+          <h1>Technology Innovation Drives Economic Grwoth</h1>
+          <p class="subtitle">Department of Economics, Namhyun Kim</p>
+        </div>
+      </section>
+
+      <section class="slide image-focus" data-slide="2">
+        <h2 class="slide-title">Why Economic Growth?</h2>
+        <figure class="wide-photo">
+          <img src="assets/nobel_prize_winners.jpg" alt="Nobel Prize winners" />
+        </figure>
+      </section>
+
+      <section class="slide split-slide nobel-slide" data-slide="3">
+        <h2 class="slide-title">Why Economic Growth?</h2>
+        <figure class="photo-panel left-lift">
+          <img src="assets/nobel_prize_winners.jpg" alt="Nobel Prize winners" />
+        </figure>
+        <article class="text-panel nobel-copy">
+          <p>Nobel Prize in Economic Sciences went to <strong>Joel Mokyr, Philippe Aghion and Peter Howitt</strong></p>
+          <p><em>Joel Mokyr, Philippe Aghion and Peter Howitt</em></p>
+          <p>w/ one half to</p>
+          <p><strong>Joel Mokyr</strong> for <em>"for having identified the prerequisites for sustained growth through technological progress"</em></p>
+          <p>and the other half jointly to</p>
+          <p><strong>Philippe Aghion</strong> &amp; <strong>Peter Howitt</strong> for <em>"for the theory of sustained growth through creative destruction"</em></p>
+        </article>
+      </section>
+
+      <section class="slide agenda-slide" data-slide="4">
+        <h2 class="slide-title">Today's Route</h2>
+        <ol class="agenda-list">
+          <li><span>01</span>Overcome Diminishing Returns</li>
+          <li><span>02</span>Spreads Knowledge w/o Being Used Up</li>
+          <li><span>03</span>Changes the Structure of the Economy</li>
+        </ol>
+      </section>
+
+      <section class="slide chart-slide" data-slide="5">
+        <h2 class="slide-title">Overcome Diminishing Returns</h2>
+        <div class="formula">Y = A K<sup>&alpha;</sup> L<sup>1 - &alpha;</sup></div>
+        <div class="chart-shell">
+          <canvas id="techShiftChart" aria-label="Cobb-Douglas curves with A and A prime"></canvas>
+        </div>
+        <p class="caption">Ceteris paribus: only technology level A changes.</p>
+      </section>
+
+      <section class="slide interactive-slide" data-slide="6">
+        <h2 class="slide-title">Overcome Diminishing Returns</h2>
+        <div class="two-column">
+          <div class="chart-card">
+            <canvas id="diminishingChart" aria-label="Diminishing returns chart"></canvas>
+          </div>
+          <div class="factory-panel">
+            <div class="factory-header">
+              <div>
+                <p class="eyebrow">Factory Example</p>
+                <h3>More machines, smaller extra output</h3>
+              </div>
+              <div class="machine-counter"><span id="machineCount">5</span> machines</div>
+            </div>
+            <div class="factory-body">
+              <div class="factory-roof"></div>
+              <div id="machineFloor" class="machine-floor" aria-label="Machine animation"></div>
+            </div>
+            <div class="controls">
+              <button type="button" id="minusMachine" aria-label="Remove one machine">-</button>
+              <button type="button" id="plusMachine" aria-label="Add one machine">+</button>
+              <div class="metric">
+                <span>Output gain</span>
+                <strong id="singleDelta">0.00</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide interactive-slide" data-slide="7">
+        <h2 class="slide-title">Overcome Diminishing Returns</h2>
+        <div class="two-column">
+          <div class="chart-card">
+            <canvas id="techCompareChart" aria-label="Technology comparison chart"></canvas>
+          </div>
+          <div class="factory-panel compact">
+            <div class="factory-header">
+              <div>
+                <p class="eyebrow">Technology Shift</p>
+                <h3>Same machines, higher A</h3>
+              </div>
+              <div class="machine-counter"><span id="machineCountCompare">5</span> machines</div>
+            </div>
+            <div class="factory-body">
+              <div class="factory-roof"></div>
+              <div id="machineFloorCompare" class="machine-floor" aria-label="Comparison machine animation"></div>
+            </div>
+            <div class="controls">
+              <button type="button" id="minusMachineCompare" aria-label="Remove one machine">-</button>
+              <button type="button" id="plusMachineCompare" aria-label="Add one machine">+</button>
+            </div>
+            <div class="delta-grid">
+              <div><span>A gain</span><strong id="baseDelta">0.00</strong></div>
+              <div><span>A' gain</span><strong id="highDelta">0.00</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide image-focus romer-slide" data-slide="8">
+        <h2 class="slide-title">Spreads Knowledge w/o Being Used Up</h2>
+        <figure class="portrait-photo">
+          <img src="assets/paul_romer.jpg" alt="Paul Romer" />
+        </figure>
+      </section>
+
+      <section class="slide definition-slide" data-slide="9">
+        <h2 class="slide-title">Spreads Knowledge w/o Being Used Up</h2>
+        <div class="definition-card">
+          <p class="term">Knowledge Spillover</p>
+          <h3>Ideas created by one firm or person can raise productivity for others.</h3>
+          <p>Unlike a machine, knowledge is non-rival: using it does not use it up. It spreads through workers, networks, suppliers, universities, and nearby firms.</p>
+          <p class="source-note">Sources: Nature Index, NBER</p>
+        </div>
+      </section>
+
+      <section class="slide split-slide map-slide" data-slide="10">
+        <h2 class="slide-title">Spreads Knowledge w/o Being Used Up</h2>
+        <div id="siliconMap" class="map-panel" aria-label="Leaflet map of Silicon Valley"></div>
+        <article class="text-panel">
+          <ul class="clean-list">
+            <li><strong>Close distance</strong> helps ideas move quickly.</li>
+            <li><strong>Job switching</strong> carries tacit knowledge.</li>
+            <li><strong>Informal networks</strong> turn local talk into innovation.</li>
+            <li><strong>Fast diffusion</strong> raises the whole cluster's productivity.</li>
+            <li><strong>Talent and capital</strong> make the cycle self-reinforcing.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="slide split-slide netflix-slide" data-slide="11">
+        <h2 class="slide-title">Changes the Structure of the Economy</h2>
+        <div class="logo-panel">
+          <div class="netflix-logo" aria-label="Netflix logo">NETFLIX</div>
+        </div>
+        <article class="text-panel">
+          <ul class="clean-list">
+            <li><strong>Old model:</strong> physical rental stores.</li>
+            <li><strong>New model:</strong> mail DVD, then streaming.</li>
+            <li><strong>No late fees</strong> changed consumer expectations.</li>
+            <li><strong>Blockbuster bankrupt:</strong> 2010.</li>
+            <li><strong>Streaming platforms</strong> lowered distribution costs globally.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="slide thanks-slide" data-slide="12">
+        <div class="center-stack">
+          <h2>Thank You for Listening</h2>
+        </div>
+      </section>
+    </main>
+
+    <nav class="deck-nav" aria-label="Slide navigation">
+      <button type="button" id="prevSlide" aria-label="Previous slide">‹</button>
+      <span id="slideNumber">1 / 12</span>
+      <button type="button" id="nextSlide" aria-label="Next slide">›</button>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
